@@ -19,10 +19,12 @@ public class EncryptionDialog {
 	private Text Inputtext;
 	private Label lblCipherText;
 	
+	
 	public EncryptionDialog(Shell windowShell) {
 	    windowShell.setText("Encryption Window");
 		  }
 	
+	//Display the Encryption box
 	public void open() {
 		Display display = Display.getDefault();
 		createContents();
@@ -34,6 +36,7 @@ public class EncryptionDialog {
 			}
 		}
 	}
+	//creation of input&output labels and the button
 	protected void createContents() {
 		shell = new Shell();
 		shell.setSize(450, 300);
@@ -45,7 +48,6 @@ public class EncryptionDialog {
 		
 		Inputtext = new Text(shell, SWT.BORDER);
 		Inputtext.setBounds(58, 59, 80, 31);
-		
 		
 		final Label lblCipherText = new Label(shell, SWT.NONE);
 		lblCipherText.setBounds(53, 158, 327, 60);
@@ -75,6 +77,7 @@ public class EncryptionDialog {
 
 	}
 	
+	//Encryption using blowfish algorithm
 	public byte[] encrypt(byte encrypt[], byte en_key[]) { 
 	     try { 
 	           SecretKeySpec key = new SecretKeySpec(en_key, "Blowfish"); 
